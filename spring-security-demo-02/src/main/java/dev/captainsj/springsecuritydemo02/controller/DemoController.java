@@ -3,6 +3,8 @@ package dev.captainsj.springsecuritydemo02.controller;
 import dev.captainsj.springsecuritydemo02.entity.User;
 import dev.captainsj.springsecuritydemo02.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,11 +18,14 @@ public class DemoController {
 
     @GetMapping("/demo")
     public String demo() {
-        return  "Demo!";
+        var u = SecurityContextHolder.getContext();
+        u.getAuthentication().getAuthorities().stream().forEach(System.out::println);
+        return "Demo!";
     }
 
     @PostMapping("/user/add")
     public User saveUser(@RequestBody User user) {
         return userRepository.save(user);
     }
+
 }
