@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>dev.captainsj</groupId>
+            <artifactId>LoggingAspectLib</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>

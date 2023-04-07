@@ -4,10 +4,8 @@ import dev.captainsj.springsecuritydemo02.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-
 import java.util.Collection;
-import java.util.List;
+
 
 @AllArgsConstructor
 public class SecurityUser implements UserDetails{
@@ -32,7 +30,6 @@ public class SecurityUser implements UserDetails{
                 .stream().map(SecurityAuthorities::new)
                 .toList();
     }
-
 
     @Override
     public boolean isAccountNonExpired() {

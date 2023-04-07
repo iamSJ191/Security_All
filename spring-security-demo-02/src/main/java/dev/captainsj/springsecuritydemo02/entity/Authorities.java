@@ -12,7 +12,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class Authorities {
-
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
